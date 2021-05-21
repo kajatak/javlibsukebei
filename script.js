@@ -3,7 +3,7 @@ const API = 'https://nyaaapi.herokuapp.com/sukebei/real?query='
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 
-    
+
 }
 
 let JAVTitle = document.getElementById('video_id').getElementsByClassName('text')[0].innerText
@@ -19,7 +19,7 @@ function inflator(torrents) {
     for (let i = (5 * pageCount); i < ((5 * pageCount) + endLimitDiscriminator()); i++) {
 
         string += `<tr><div class="torrents"><div>
-    
+
     <div><a style="font-size: 14px;" href="${torrents[i].magnet}"> ${torrents[i].title}</a><a style="font-size: 14px;"> (${torrents[i].size}) <a href="${torrents[i].link}">Ⓘ</a></div>
     </span><p style="margin: 0px; margin-bottom: 10px; float:left; color: green; font-size: 14px;">${torrents[i].seeders}↑</p><p style="margin: 0px; margin-bottom: 10px; float:left; color: red; font-size: 14px;">${torrents[i].leechers}↓&nbsp;</p></div>
     <p style="margin: 0px; margin-bottom: 10px; font-size: 14px;">${torrents[i].time}</p></div></td></tr>`
@@ -55,7 +55,7 @@ function pages() {
 }
 
 try {
-    fetch(API + JAVTitle)
+    fetch(API + JAVTitle + '&sort=seeders&order=desc')
         .then((response) => {
             console.log(response)
             response.json().then((res) => {
