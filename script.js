@@ -1,18 +1,18 @@
 const API = 'https://nyaaapi.herokuapp.com/sukebei/real?query='
 
-function insertAfter(referenceNode, newNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-
-
-}
-
 let JAVTitle = document.getElementById('video_id').getElementsByClassName('text')[0].innerText
-let songInfoElement = document.getElementsByClassName('socialmedia')[1]
+let songInfoElement = document.getElementsByClassName('socialmedia')[0]
 let torrentElement = document.createElement('div')
 
 let torrentsCount = 0
 let torrents = []
 let pageCount = 0
+
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+
+
+}
 
 function inflator(torrents) {
     let string = `<div id="video_reviews"><div class="header">Torrents</div><table class="table-recently-updated" width="100%"><hr class="grey"><tbody>`
